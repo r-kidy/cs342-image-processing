@@ -7,11 +7,15 @@ from tqdm import tqdm
 import os
 import pandas as pd
 
+#CHANGE THESE PATHS AS NEEDED
+image_dir = "img_align_celeba"
+save_path = "celeba_vit_embeddings.npy"
+
 # get cwd
 cwd = os.getcwd()
 #check img_align_celeba directory exists
-if not os.path.exists(os.path.join(cwd, "img_align_celeba")):
-    raise FileNotFoundError("img_align_celeba directory not found in the current working directory.")
+if not os.path.exists(os.path.join(cwd, image_dir)):
+    raise FileNotFoundError(f"{image_dir} directory not found in the current working directory.")
 
 # 1. Load pretrained Vision Transformer
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -29,7 +33,7 @@ std=[0.229, 0.224, 0.225]
 ),
 ])
 # 3. Directory containing CelebA images (modify path)
-image_dir = "img_align_celeba"
+
 sample_subset_size = 20000
 image_list = sorted(os.listdir(image_dir))[:sample_subset_size] # sample subset
 
@@ -51,4 +55,4 @@ all_features = np.concatenate(all_features, axis=0)
 
 
 # 5. Save for later use
-np.save("celeba_vit_embeddings.npy", all_features)
+np.save(save_path, all_features)

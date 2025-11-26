@@ -16,5 +16,5 @@ source /etc/profile.d/modules.sh
 source /etc/profile.d/conda.sh
 
 ## Execute your program(s) ##
-source coursework/bin/activate
+source cs342-cw/bin/activate
 python3.11 image_processing.py
