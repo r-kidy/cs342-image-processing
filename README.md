@@ -8,9 +8,10 @@ $ git clone https://github.com/r-kidy/cs342-image-processing.git
 # 2. setup a virtual environment
 
 $ python3.11 -m venv cs342-cw
+
 $ source cs342-cw/bin/activate
 
-# 3. install all requirements (this could take a few mins)
+# 3. install all requirements (this took about 5min on a m1 mac)
 
 $ pip3.11 install -r requirements.txt
 
