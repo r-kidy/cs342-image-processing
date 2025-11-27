@@ -17,6 +17,8 @@ $ pip3.11 install -r requirements.txt
 
 # 4. run image_processing.py on dcs batch compute 
 
+- modify source and destination filepaths as needed in image_processing.py
+
 - if youre running the code on your own computer with a gpu, you dont need to do this. otherwise, this will save about 100h vs running it on the dcs computers.
 
 - for a comprehensive guide, visit: https://warwick.ac.uk/fac/sci/dcs/intranet/user_guide/batch_compute
@@ -29,7 +31,7 @@ $ cd [where you cloned the repo]
 
 $ sbatch image_processing.sbatch
 
-# 5. wait about 2-3min for the code to run, it will save the features as "celeba_vit_embeddings.npy"
+# 5. wait about 2-3min for the code to run, it will save the features as "celeba_vit_embeddings.npy" (unless specified otherwise)
 - in your coursework notebook, access the data with the following python code:
 
 data = np.load("celeba_vit_embeddings.npy")
